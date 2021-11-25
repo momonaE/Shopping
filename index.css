@@ -1,0 +1,391 @@
+        body {
+            margin: 0;
+        }
+        
+        .container {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 0.2fr 1.5fr 1.2fr 2fr;
+            grid-template-areas: "header nav nav nav" "main main main main" "content content content content" "footer footer footer footer";
+        }
+        
+        @media (max-width: 700px) {
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-areas: "header header  header header" "nav nav nav nav""main main main main" "content content content content" "footer footer footer footer"
+            }
+        }
+        
+        .header>h3 {
+            grid-area: header;
+            text-decoration: none;
+            color: red;
+            font-size: 1.4em;
+            padding-left: 2em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        /*nav bar*/
+        
+        .nav {
+            grid-area: nav;
+        }
+        
+        @media (max-width: 700px) {
+            .nav {
+                grid-area: nav;
+            }
+            .nav-details {
+                display: flex;
+                flex-direction: column;
+            }
+            .notification-bar {
+                display: flex;
+                justify-content: flex-start;
+                grid-area: notification-bar;
+            }
+        }
+        
+        .nav-details {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .nav-details>a {
+            text-decoration: none;
+            color: #000;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .nav-details>a:hover {
+            text-decoration: underline;
+            color: red;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .notification-bar {
+            display: flex;
+            justify-content: space-between;
+            grid-area: notification-bar;
+        }
+        
+        .notification-bar>a {
+            text-decoration: none;
+            padding-left: 2em;
+            color: #000;
+        }
+        
+        .notification-bar>a:hover {
+            color: red;
+        }
+        
+        .side {
+            background-color: blue;
+            grid-area: side;
+        }
+        /*main css*/
+        
+        .main {
+            background-image: url("main.jpg");
+            background-repeat: repeat;
+            background-size: cover;
+            grid-area: main;
+            height: 80vh;
+        }
+        
+        .main-content {
+            margin: 10em;
+            color: white;
+        }
+        
+        .main-content>p {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .button-main-1:hover {
+            background-color: #000;
+        }
+        
+        .button-main-2:hover {
+            background-color: transparent;
+        }
+        
+        .button-main-1 {
+            background-color: transparent;
+            color: WHITE;
+            font-weight: 100;
+            border-color: aliceblue;
+            width: 8em;
+            padding: 10px 10px;
+            border: 2px solid #E8E8E8;
+            cursor: pointer;
+        }
+        
+        .button-main-2 {
+            background-color: white;
+            color: #000;
+            font-weight: 100;
+            border-color: aliceblue;
+            width: 8em;
+            padding: 5px 2px;
+            cursor: pointer;
+            border: 2px solid #E8E8E8;
+        }
+        /*product content css*/
+        
+        .content {
+            grid-area: content;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-areas: "producttopic producttopic producttopic producttopic";
+            gap: 3em;
+            margin: 4em;
+        }
+        
+        .producttopic {
+            margin-left: 15em;
+            margin-right: 10em;
+            grid-area: producttopic;
+            color: #000;
+        }
+        
+        .popular-products {
+            display: grid;
+            grid-template-columns: 50% 50% 50%;
+            grid-template-areas: "product1 product2 product3";
+            gap: 6em;
+            margin-left: 12em;
+        }
+        
+        .product1 {
+            grid-area: product1;
+        }
+        
+        .product2 {
+            grid-area: product2;
+        }
+        
+        .product3 {
+            grid-area: product3;
+        }
+        
+        .producttopic>h3 {
+            text-align: center;
+            color: rgba(60, 65, 62, 0.333);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .producttopic>h1 {
+            text-align: center;
+            font-size: 3em;
+            line-height: 1.5px;
+        }
+        
+        .producttopic>p {
+            margin: 2em;
+            color: rgba(60, 65, 62, 0.333);
+            font-size: 2em;
+        }
+        
+        @media (max-width: 700px) {
+            .content {
+                grid-area: content;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-areas: "producttopic producttopic producttopic  producttopic ";
+                gap: 1em;
+            }
+            .producttopic {
+                grid-area: producttopic;
+                color: #000;
+                margin-left: auto;
+            }
+            .producttopic>p {
+                color: rgba(60, 65, 62, 0.333);
+                font-size: 2em;
+                margin: auto;
+            }
+            .popular-products {
+                margin-left: auto;
+                row-gap: 6em;
+                display: grid;
+                grid-template-columns: 25% 25% 25%;
+                grid-template-areas: "product1 product1 product1 " "product2 product2  product2" "product3 product3 product3";
+            }
+            .product1 {
+                grid-area: product1;
+            }
+            .product2 {
+                grid-area: product2;
+            }
+            .product3 {
+                grid-area: product3;
+            }
+        }
+        /* card css*/
+        
+        .card {}
+        
+        .card-details {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+        }
+        
+        .card-details>h3 {
+            color: #000;
+            font-family: monospace;
+            font-size: 1.5em;
+            line-height: normal;
+        }
+        
+        .card-details>h3:hover {
+            color: red;
+            font-family: monospace;
+            font-size: 1.5em;
+            line-height: normal;
+        }
+        
+        .lower-card {
+            padding: 1em;
+        }
+        
+        .button-card-1 {
+            background-color: #000;
+            color: white;
+            font-weight: bold;
+            border-color: #000;
+            width: 8em;
+            padding: 5px 2px;
+            cursor: pointer;
+        }
+        
+        .button-card-1:hover {
+            background-color: transparent;
+            color: #000
+        }
+        
+        .button-card-2:hover {
+            background-color: #000;
+            color: white
+        }
+        
+        .button-card-2 {
+            background-color: transparent;
+            font-weight: bold;
+            border-color: #000;
+            width: 8em;
+            padding: 5px 2px;
+            cursor: pointer;
+        }
+        
+        .icons,
+        .rate {
+            color: orange;
+            padding-left: 0.5em;
+        }
+        
+        .likes {
+            color: rgba(60, 65, 62, 0.333);
+        }
+        
+        .feed-back span a {
+            text-decoration: none;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgba(60, 65, 62, 0.333);
+        }
+        
+        .product-description {
+            color: rgba(60, 65, 62, 0.333);
+        }
+        
+        .product-image {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        /* footer css*/
+        
+        .footer {
+            background-color: rgba(221, 236, 227, 0.333);
+            ;
+            grid-area: footer;
+        }
+        
+        .details-footer {
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-areas: "aboutus quicklinks contact newsletter";
+            margin-left: 12em;
+            margin-right: 12em;
+            gap: 1em;
+            color: rgba(60, 65, 62, 0.333);
+        }
+        
+        .details-footer>div>h3 {
+            color: #000;
+            font-size: 1.3em;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .aboutus {
+            grid-area: aboutus;
+        }
+        
+        .aboutus>p {
+            color: rgba(60, 65, 62, 0.333);
+        }
+        
+        .quicklinks {
+            grid-area: quicklinks;
+        }
+        
+        .quicklinks>ul>li {
+            text-decoration: none;
+            list-style: none;
+        }
+        
+        .quicklinks>ul>li>a {
+            text-decoration: none;
+            color: rgba(60, 65, 62, 0.333);
+            line-height: 1.2em;
+            font-size: 1.1em;
+        }
+        
+        .contact {
+            grid-area: contact;
+        }
+        
+        .contact>p>span {
+            padding-left: 1em;
+        }
+        
+        .newsletter {
+            grid-area: newsletter;
+        }
+        
+        #newsletterform {
+            padding: 5px 2px;
+        }
+        
+        .newsletter-button {
+            background-color: #000;
+            color: white;
+            font-weight: bold;
+            border-color: #000;
+            width: 8em;
+            padding: 5px 2px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 700px) {
+            .details-footer {
+                display: grid;
+                grid-template-columns: 25% 25% 25% 25%;
+                grid-template-areas: "aboutus aboutus quicklinks quicklinks" "contact contact newsletter newsletter";
+                margin-left: auto;
+                margin-right: auto;
+                gap: 1em;
+                color: rgba(60, 65, 62, 0.333);
+            }
+        }
